@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block content  %}
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First </th>
+        {% comment %} <th scope="col">Last</th> {% endcomment %}
+        <th scope="col">age</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for reg in regs %}   
+        <tr>
+            <th scope="row">{{reg.id}}</th>
+            <td>{{reg.name}}</td>
+            <td>{{reg.age}}</td>
+        </tr>
+      {% endfor %}
+     </tbody>
+  </table>
+{% endblock content  %}
+

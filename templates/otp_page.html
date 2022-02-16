@@ -1,0 +1,68 @@
+{% extends 'layout.html' %}
+
+{% block content  %}
+<h2 align="center"> Register</h2>
+
+<div class="container register-form">
+    <form action="result_page" method="post">
+      {% csrf_token %}
+
+      {% for message in messages %}
+       <div class="alert alert-danger" role="alert">
+        {{message}}
+      </div>
+
+      {% endfor %}
+      {% if first_name %}
+        <p> {{last_name}}</p>
+      {% endif %}
+
+      {% comment %} <div class="form-group"> {% endcomment %}
+      <div hidden class="form-group">
+        <input  name="first_name" value= {{first_name}} /> 
+        <input  name="last_name" value= {{last_name}} /> 
+        <input  name="username" value= {{username}} /> 
+        <input  name="password" value= {{password}} /> 
+        <input  name="email" value= {{email}} /> 
+        <input  name="birthday" value= {{birthday}} /> 
+        <input  name="tel" value= {{tel}} /> 
+        <input  name="address" value= {{address}} />
+        <input  name="city" value= {{city}} /> 
+        <input  name="country" value= {{country}} />
+        <input  name="zip_code" value= {{zip_code}} />
+        
+        <input  name="otp_sms1" value= {{otp_sms}} /> 
+        <input  name="otp_email1" value= {{otp_email}} /> 
+      </div>
+
+      <div class="form-group">
+        <label>Email OTP :</label>  
+        <label>{{otp_sms}} :</label>
+        {% comment %} <input type="number" name="otp_sms1"  />  {% endcomment %}
+        <input  type="text" class="form-control"name="otp_sms2" required /> 
+      </div>
+
+      <div class="form-group">
+        <label>SMS OTP :</label>  
+        <label>{{otp_email}}:</label>
+        <input  type="text" class="form-control"name="otp_email2" required /> 
+        {% comment %} <input  type="text"class="form-control"name="first_name"required /> {% endcomment %}
+      </div>
+      
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Next</button>
+      </div>
+
+
+
+    </form>
+
+    <br />
+        <h4>Already a user? <a href="/login">Login</a></h4>
+    <br />
+
+    
+  </div>
+    
+{% endblock content  %}
+
