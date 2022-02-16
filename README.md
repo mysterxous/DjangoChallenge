@@ -21,3 +21,4 @@ docker run -p 80:80 --name pg4 -e 'PGADMIN_DEFAULT_EMAIL=user@domain.com' -e 'PG
 ```
 python3 manage.py  runserver
 ```
+![alt text](ER_Diagram.png)
